@@ -1,119 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jingning's portfolio in applied AI, machine learning, recommendation systems, and cloud engineering.">
-    <title>Jingning · Applied AI & Machine Learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jing Ning — academic research and practical ML engineering for efficient AI systems.">
+    <meta name="theme-color" content="#050706">
+    <title>Jing Ning · ML Research &amp; Engineering</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header class="site-header">
-        <nav class="nav-shell" aria-label="Primary navigation">
-            <a class="wordmark" href="index.html" aria-label="Jingning home">JN<span>.</span></a>
-            <div class="nav-links">
-                <a class="active" href="index.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="blog.html">Writing</a>
-                <a href="https://github.com/jingning0528" target="_blank" rel="noreferrer">GitHub ↗</a>
-            </div>
-        </nav>
-    </header>
-
+<body class="home-page" id="top">
     <main>
-        <section class="hero section-shell">
-            <div class="hero-copy">
-                <p class="eyebrow"><span class="status-dot"></span> Building reliable, efficient AI systems</p>
-                <h1>Hi, I’m Jingning.<br><span>I turn research ideas into working systems.</span></h1>
-                <p class="hero-lead">My work sits at the intersection of applied machine learning, recommendation systems, information retrieval, and cloud engineering—from experimental models to production-oriented APIs.</p>
-                <div class="hero-actions">
-                    <a class="button button-primary" href="projects.html">Explore my work</a>
-                    <a class="button button-secondary" href="blog.html">Read my notes</a>
-                </div>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <p class="name">Jing Ning</p>
+                <h1 id="hero-title">
+                    <span>Academic Research with Practical ML Engineering</span>
+                    <span class="hero-focus">Budget-Aware AI for Efficient ML Systems<span class="cursor" aria-hidden="true">|</span></span>
+                </h1>
+                <nav class="social-links" aria-label="Profiles and résumé">
+                    <a href="https://github.com/jingning0528" target="_blank" rel="noreferrer">GitHub</a><span aria-hidden="true">/</span>
+                    <a href="https://ca.linkedin.com/in/jing-ning-745032220" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">/</span>
+                    <span class="pending-link" title="CV link coming soon">CV</span>
+                </nav>
             </div>
-            <aside class="hero-panel" aria-label="Areas of focus">
-                <p class="panel-label">Current focus</p>
-                <ul class="focus-list">
-                    <li><span>01</span> Efficient recommendation</li>
-                    <li><span>02</span> Adaptive neural reranking</li>
-                    <li><span>03</span> Applied AI on Azure</li>
-                </ul>
-                <div class="panel-footer">
-                    <span>Python</span><span>PyTorch</span><span>FastAPI</span><span>Azure</span>
-                </div>
-            </aside>
+            <a class="scroll-cue" href="#projects">Selected projects <span aria-hidden="true">↓</span></a>
         </section>
 
-        <section class="section-shell expertise-section">
-            <div class="section-heading">
-                <p class="eyebrow">What I work on</p>
-                <h2>Research depth, engineering discipline.</h2>
-            </div>
-            <div class="expertise-grid">
-                <article class="expertise-card">
-                    <p class="card-index">01</p>
-                    <h3>Recommendation Systems</h3>
-                    <p>Cross-domain transfer, federated learning, personalization, and communication-efficient model updates.</p>
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+            <header class="section-header">
+                <p class="section-index">01</p>
+                <h2 id="projects-title">Selected Projects</h2>
+            </header>
+            <div class="project-list">
+                <article class="project-row">
+                    <div class="project-number" aria-hidden="true">01</div>
+                    <div class="project-copy"><h3>PEN Match API V2</h3><p>Production-oriented FastAPI platform for record matching, retrieval, evaluation, and agent workflows on Azure.</p></div>
+                    <a class="repo-link" href="https://github.com/jingning0528/pen-match-api-v2" target="_blank" rel="noreferrer" aria-label="PEN Match API V2 on GitHub">GitHub ↗</a>
                 </article>
-                <article class="expertise-card">
-                    <p class="card-index">02</p>
-                    <h3>Search & Reranking</h3>
-                    <p>Budget-aware neural reranking, controlled evaluation, uncertainty analysis, and retrieval quality.</p>
+                <article class="project-row">
+                    <div class="project-number" aria-hidden="true">02</div>
+                    <div class="project-copy"><h3>Adaptive Reranking</h3><p>Controlled experiments for allocating limited cross-encoder budgets while preserving neural search quality.</p></div>
+                    <a class="repo-link" href="https://github.com/jingning0528/adaptive-reranking" target="_blank" rel="noreferrer" aria-label="Adaptive Reranking on GitHub">GitHub ↗</a>
                 </article>
-                <article class="expertise-card">
-                    <p class="card-index">03</p>
-                    <h3>Applied AI Engineering</h3>
-                    <p>Production-oriented APIs, agent workflows, cloud infrastructure, evaluation, and CI/CD.</p>
+                <article class="project-row">
+                    <div class="project-number" aria-hidden="true">03</div>
+                    <div class="project-copy"><h3>MoFiLoRA</h3><p>Communication-efficient federated recommendation using low-rank updates and momentum aggregation.</p></div>
+                    <a class="repo-link" href="https://github.com/jingning0528/mofilora-fedrec" target="_blank" rel="noreferrer" aria-label="MoFiLoRA on GitHub">GitHub ↗</a>
+                </article>
+                <article class="project-row">
+                    <div class="project-number" aria-hidden="true">04</div>
+                    <div class="project-copy"><h3>Transformer CDR</h3><p>Transformer-enhanced cross-domain recommendation with reproducible experiments and privacy-aware preprocessing.</p></div>
+                    <a class="repo-link" href="https://github.com/jingning0528/transformer-cdr" target="_blank" rel="noreferrer" aria-label="Transformer CDR on GitHub">GitHub ↗</a>
                 </article>
             </div>
-        </section>
-
-        <section class="section-shell selected-work">
-            <div class="section-heading heading-row">
-                <div>
-                    <p class="eyebrow">Selected work</p>
-                    <h2>Projects across research and production.</h2>
-                </div>
-                <a class="text-link" href="projects.html">View all projects →</a>
-            </div>
-            <div class="project-preview-grid">
-                <a class="project-preview featured" href="https://github.com/jingning0528/pen-match-api-v2" target="_blank" rel="noreferrer">
-                    <div class="project-meta"><span>Applied AI</span><span>01</span></div>
-                    <h3>PEN Match API V2</h3>
-                    <p>A production-oriented FastAPI and Azure AI platform for student-record matching, retrieval, evaluation, and agent workflows.</p>
-                    <div class="tag-row"><span>FastAPI</span><span>Azure</span><span>LangGraph</span><span>Terraform</span></div>
-                </a>
-                <a class="project-preview" href="https://github.com/jingning0528/adaptive-reranking" target="_blank" rel="noreferrer">
-                    <div class="project-meta"><span>Information Retrieval</span><span>02</span></div>
-                    <h3>Adaptive Reranking</h3>
-                    <p>Controlled experiments for allocating limited cross-encoder budgets while preserving ranking quality.</p>
-                    <div class="tag-row"><span>PyTorch</span><span>BEIR</span><span>Evaluation</span></div>
-                </a>
-                <a class="project-preview" href="https://github.com/jingning0528/mofilora-fedrec" target="_blank" rel="noreferrer">
-                    <div class="project-meta"><span>Federated Learning</span><span>03</span></div>
-                    <h3>MoFiLoRA</h3>
-                    <p>Momentum-enhanced low-rank adaptation for communication-efficient federated recommendation.</p>
-                    <div class="tag-row"><span>LoRA</span><span>FedNCF</span><span>PyTorch</span></div>
-                </a>
-            </div>
-        </section>
-
-        <section class="section-shell contact-strip">
-            <div>
-                <p class="eyebrow">Let’s connect</p>
-                <h2>Interested in applied AI, recommendation, or reliable ML?</h2>
-            </div>
-            <a class="button button-primary" href="https://github.com/jingning0528" target="_blank" rel="noreferrer">Find me on GitHub ↗</a>
         </section>
     </main>
-
-    <footer class="site-footer section-shell">
-        <p>© 2026 Jingning</p>
-        <p>Designed and built with HTML, CSS, and curiosity.</p>
-    </footer>
+    <footer class="site-footer"><p>Jing Ning <span aria-hidden="true">·</span> 2026</p><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
