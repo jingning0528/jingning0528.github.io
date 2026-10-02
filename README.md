@@ -1,38 +1,27 @@
 # Jingning's Personal Website
 
-Welcome to my personal website hosted at [jingning.github.io](https://jingning.github.io).
+Personal portfolio for applied AI, machine learning, recommendation systems, information retrieval, and cloud engineering.
+
+Visit the live site at [jingning.github.io](https://jingning.github.io).
 
 ## Features
 
-- **Black Background**: Clean, modern dark theme
-- **Aurora Text Effect**: Beautiful animated gradient text with flowing colors
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Minimalist Layout**: Clean and focused content presentation
+- Professional landing page with a focused introduction
+- Real project portfolio sourced from public GitHub repositories
+- Existing JSON-powered writing section
+- Responsive layouts for desktop, tablet, and mobile
+- Accessible reduced-motion support and semantic navigation
+- Lightweight CSS background with no homepage video dependency
 
 ## Technologies Used
 
-- HTML5
-- CSS3 (with advanced animations and gradients)
-- Responsive design principles
+- Semantic HTML5
+- Modern CSS with responsive grid layouts
+- Vanilla JavaScript for the blog system
+- GitHub Pages
 
 ## Getting Started
 
 1. Clone this repository
 2. Open `index.html` in your web browser
-3. Or visit the live site at [jingning.github.io](https://jingning.github.io)
-
-## Customization
-
-The website is designed to be easily customizable:
-
-- Modify `index.html` for content changes
-- Edit `styles.css` for styling and animation adjustments
-- The aurora effect can be customized by changing the gradient colors in the CSS
-
-## License
-
-This project is open source and available under the MIT License.
-
----
-
-Built with ❤️ by Jingning
+3. Or serve it locally with `python3 -m http.server 8000`

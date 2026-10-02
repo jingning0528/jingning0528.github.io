@@ -3,74 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Jingning</title>
+    <meta name="description" content="Selected applied AI, machine learning, recommendation, and search projects by Jingning.">
+    <title>Projects · Jingning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="plain-page">
-    <div class="container page-transition">
-        <header>
-            <h1 class="plain-text" id="mainTitle">Projects</h1>
-            <p class="plain-text subtitle" id="subtitle">My latest work and creations</p>
-            <a href="index.html" class="plain-text link-button" id="homeLink">← Back to Home</a>
-        </header>
-        
-        <main>
-            <section class="content">
-                <article class="project-item">
-                    <h2 class="plain-text" id="project1Title">Personal Website</h2>
-                    <p class="plain-text" id="project1Tech">HTML, CSS, JavaScript</p>
-                    <p class="plain-text" id="project1Desc">A dynamic personal website featuring video backgrounds, interactive effects, and modern design principles...</p>
-                    <a href="#" class="plain-text link-button" id="project1Link">View Project</a>
-                </article>
-            </section>
-            
-            <section class="content">
-                <article class="project-item">
-                    <h2 class="plain-text" id="project2Title">Data Visualization Dashboard</h2>
-                    <p class="plain-text" id="project2Tech">React, D3.js, Node.js</p>
-                    <p class="plain-text" id="project2Desc">Interactive dashboard for real-time data visualization with dynamic charts and analytics...</p>
-                    <a href="#" class="plain-text link-button" id="project2Link">View Project</a>
-                </article>
-            </section>
-            
-            <section class="content">
-                <article class="project-item">
-                    <h2 class="plain-text" id="project3Title">AI Chat Application</h2>
-                    <p class="plain-text" id="project3Tech">Python, TensorFlow, Flask</p>
-                    <p class="plain-text" id="project3Desc">Intelligent chatbot powered by machine learning with natural language processing capabilities...</p>
-                    <a href="#" class="plain-text link-button" id="project3Link">View Project</a>
-                </article>
-            </section>
-            
-            <section class="content">
-                <article class="project-item">
-                    <h2 class="plain-text" id="project4Title">Mobile Game</h2>
-                    <p class="plain-text" id="project4Tech">Unity, C#, Mobile Development</p>
-                    <p class="plain-text" id="project4Desc">Cross-platform mobile game with engaging gameplay mechanics and stunning visuals...</p>
-                    <a href="#" class="plain-text link-button" id="project4Link">View Project</a>
-                </article>
-            </section>
-        </main>
-    </div>
+<body>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="wordmark" href="index.html" aria-label="Jingning home">JN<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html">About</a>
+                <a class="active" href="projects.html">Projects</a>
+                <a href="blog.html">Writing</a>
+                <a href="https://github.com/jingning0528" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+        </nav>
+    </header>
 
-    <script>
-        // Smooth page transitions
-        function smoothPageTransition(url) {
-            document.body.style.opacity = '0';
-            document.body.style.transform = 'translateY(-20px)';
-            document.body.style.transition = 'all 0.4s ease-in-out';
-            
-            setTimeout(() => {
-                window.location.href = url;
-            }, 400);
-        }
-        
-        // Add click event listeners for smooth transitions
-        document.getElementById('homeLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            smoothPageTransition('index.html');
-        });
-    </script>
+    <main class="section-shell projects-page">
+        <header class="page-intro">
+            <p class="eyebrow">Selected projects</p>
+            <h1>From model experiments<br><span>to deployed AI systems.</span></h1>
+            <p>Five projects that reflect my interests in applied AI, customer modeling, recommendation systems, federated learning, and efficient search.</p>
+        </header>
+
+        <section class="project-list" aria-label="Project portfolio">
+            <article class="project-card project-card-wide">
+                <div class="project-number">01</div>
+                <div class="project-card-body">
+                    <div class="project-kicker">Production AI · Government</div>
+                    <h2>PEN Match API V2</h2>
+                    <p>A FastAPI backend integrating record matching, Azure OpenAI, Azure AI Search, LangGraph workflows, cloud storage, evaluation, Terraform infrastructure, and automated deployment.</p>
+                    <div class="tag-row"><span>Python</span><span>FastAPI</span><span>Azure AI</span><span>LangGraph</span><span>Terraform</span></div>
+                </div>
+                <a class="project-link" href="https://github.com/jingning0528/pen-match-api-v2" target="_blank" rel="noreferrer" aria-label="View PEN Match API V2 on GitHub">View repository ↗</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">02</div>
+                <div class="project-card-body">
+                    <div class="project-kicker">Customer Analytics · Machine Learning</div>
+                    <h2>Customer Behavior Prediction</h2>
+                    <p>An end-to-end ML workflow for behavioral feature engineering, customer segmentation, purchase prediction, and recommendation-oriented decisions in automotive e-commerce.</p>
+                    <div class="tag-row"><span>scikit-learn</span><span>XGBoost</span><span>Clustering</span><span>Analytics</span></div>
+                </div>
+                <a class="project-link" href="https://github.com/jingning0528/customer-behavior-prediction" target="_blank" rel="noreferrer" aria-label="View Customer Behavior Prediction on GitHub">View repository ↗</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">03</div>
+                <div class="project-card-body">
+                    <div class="project-kicker">Cross-Domain Recommendation · Research</div>
+                    <h2>Transformer CDR</h2>
+                    <p>A Transformer-enhanced cross-domain recommendation implementation with multiple dataset presets, reproducible experiment modes, and optional privacy-aware source preprocessing.</p>
+                    <div class="tag-row"><span>PyTorch</span><span>RecBole-CDR</span><span>Transformers</span><span>Privacy</span></div>
+                </div>
+                <a class="project-link" href="https://github.com/jingning0528/transformer-cdr" target="_blank" rel="noreferrer" aria-label="View Transformer CDR on GitHub">View repository ↗</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">04</div>
+                <div class="project-card-body">
+                    <div class="project-kicker">Federated Recommendation · Efficiency</div>
+                    <h2>MoFiLoRA</h2>
+                    <p>Communication-efficient federated recommendation using low-rank item-embedding updates, momentum aggregation, and controlled fixed-factor ablations.</p>
+                    <div class="tag-row"><span>Federated Learning</span><span>LoRA</span><span>Momentum</span><span>PyTorch</span></div>
+                </div>
+                <a class="project-link" href="https://github.com/jingning0528/mofilora-fedrec" target="_blank" rel="noreferrer" aria-label="View MoFiLoRA on GitHub">View repository ↗</a>
+            </article>
+
+            <article class="project-card project-card-wide">
+                <div class="project-number">05</div>
+                <div class="project-card-body">
+                    <div class="project-kicker">Neural Search · Evaluation</div>
+                    <h2>Adaptive Reranking</h2>
+                    <p>A careful study of how to allocate limited neural reranking budgets. The project includes frozen validation splits, paired bootstrap analysis, model-routing tests, token-length studies, and query-level budget diagnostics.</p>
+                    <div class="tag-row"><span>Information Retrieval</span><span>Cross-Encoders</span><span>BEIR</span><span>Statistical Evaluation</span></div>
+                </div>
+                <a class="project-link" href="https://github.com/jingning0528/adaptive-reranking" target="_blank" rel="noreferrer" aria-label="View Adaptive Reranking on GitHub">View repository ↗</a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+        <p>© 2026 Jingning</p>
+        <a class="text-link" href="index.html">Back home →</a>
+    </footer>
 </body>
 </html>

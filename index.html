@@ -3,202 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jingning - Personal Website</title>
+    <meta name="description" content="Jingning's portfolio in applied AI, machine learning, recommendation systems, and cloud engineering.">
+    <title>Jingning · Applied AI & Machine Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Mouse Effect Canvas -->
-    <canvas id="mouseCanvas"></canvas>
-    
-    <!-- Video Background -->
-    <div class="video-background">
-        <video id="backgroundVideo1" muted playsinline class="video-layer active">
-            <source src="background_video.MOV" type="video/quicktime">
-            <source src="background_video.MOV" type="video/mp4">
-        </video>
-        <video id="backgroundVideo2" muted playsinline class="video-layer">
-            <source src="background_video.MOV" type="video/quicktime">
-            <source src="background_video.MOV" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-    </div>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="wordmark" href="index.html" aria-label="Jingning home">JN<span>.</span></a>
+            <div class="nav-links">
+                <a class="active" href="index.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="blog.html">Writing</a>
+                <a href="https://github.com/jingning0528" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container">
-        <header>
-            <h1 class="aurora-text typewriter" id="mainTitle">JingNing</h1>
-        </header>
-        
-        <main>
-            <section class="content">
-                <a href="blog.html" class="aurora-text fade-in" id="blogTitle">Blog</a>
-            </section>
-            
-            <section class="content">
-                <a href="projects.html" class="aurora-text fade-in" id="projectsTitle">Projects</a>
-            </section>
-        </main>
-    </div>
+    <main>
+        <section class="hero section-shell">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> Building reliable, efficient AI systems</p>
+                <h1>Hi, I’m Jingning.<br><span>I turn research ideas into working systems.</span></h1>
+                <p class="hero-lead">My work sits at the intersection of applied machine learning, recommendation systems, information retrieval, and cloud engineering—from experimental models to production-oriented APIs.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="projects.html">Explore my work</a>
+                    <a class="button button-secondary" href="blog.html">Read my notes</a>
+                </div>
+            </div>
+            <aside class="hero-panel" aria-label="Areas of focus">
+                <p class="panel-label">Current focus</p>
+                <ul class="focus-list">
+                    <li><span>01</span> Efficient recommendation</li>
+                    <li><span>02</span> Adaptive neural reranking</li>
+                    <li><span>03</span> Applied AI on Azure</li>
+                </ul>
+                <div class="panel-footer">
+                    <span>Python</span><span>PyTorch</span><span>FastAPI</span><span>Azure</span>
+                </div>
+            </aside>
+        </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mouse effect canvas setup
-            const canvas = document.getElementById('mouseCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            // Set canvas size
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-            
-            // Mouse tracking
-            let mouseX = 0;
-            let mouseY = 0;
-            let particles = [];
-            
-            // Track mouse position
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-            
-            // Particle class
-            class Particle {
-                constructor(x, y) {
-                    this.x = x;
-                    this.y = y;
-                    this.vx = (Math.random() - 0.5) * 1.5;
-                    this.vy = (Math.random() - 0.5) * 1.5;
-                    this.life = 1;
-                    this.decay = Math.random() * 0.015 + 0.005;
-                    this.size = Math.random() * 3 + 1;
-                    this.color = '#ffffff';
-                }
-                
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    this.life -= this.decay;
-                    this.size *= 0.98;
-                }
-                
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = this.life;
-                    ctx.fillStyle = this.color;
-                    ctx.shadowBlur = 10;
-                    ctx.shadowColor = this.color;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.restore();
-                }
-            }
-            
-            // Animation loop
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Add new particles at mouse position
-                if (Math.random() < 0.25) {
-                    particles.push(new Particle(mouseX, mouseY));
-                }
-                
-                // Update and draw particles
-                for (let i = particles.length - 1; i >= 0; i--) {
-                    particles[i].update();
-                    particles[i].draw();
-                    
-                    // Remove dead particles
-                    if (particles[i].life <= 0) {
-                        particles.splice(i, 1);
-                    }
-                }
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-            
-            // Video background logic
-            const video1 = document.getElementById('backgroundVideo1');
-            const video2 = document.getElementById('backgroundVideo2');
-            let currentVideo = video1;
-            let nextVideo = video2;
-            
-            function switchVideos() {
-                currentVideo.classList.remove('active');
-                currentVideo.classList.add('fading');
-                
-                nextVideo.currentTime = 0;
-                nextVideo.play();
-                nextVideo.classList.add('active');
-                nextVideo.classList.remove('fading');
-                
-                [currentVideo, nextVideo] = [nextVideo, currentVideo];
-            }
-            
-            video1.play();
-            video1.addEventListener('ended', switchVideos);
-            video2.addEventListener('ended', switchVideos);
-            
-            video1.addEventListener('loadedmetadata', function() {
-                video1.play();
-            });
-            
-            // Typewriter animation function
-            function typeWriter(element, text, speed = 100) {
-                element.innerHTML = '';
-                element.style.visibility = 'visible';
-                
-                let i = 0;
-                function type() {
-                    if (i < text.length) {
-                        element.innerHTML += text.charAt(i);
-                        i++;
-                        setTimeout(type, speed);
-                    }
-                }
-                type();
-            }
-            
-            // Animate elements in sequence
-            setTimeout(() => typeWriter(document.getElementById('mainTitle'), 'JingNing', 150), 500);
-            
-            // Trigger fade-in animations after typewriter finishes
-            setTimeout(() => {
-                document.getElementById('blogTitle').style.animation = 'fadeIn 1.5s ease-in-out forwards';
-            }, 2000); // Start after "JingNing" typewriter (500ms + ~1500ms for typing)
-            
-            setTimeout(() => {
-                document.getElementById('projectsTitle').style.animation = 'fadeIn 1.5s ease-in-out forwards';
-            }, 3500); // Start 1.5s after Blog button
-            
-            // Smooth page transitions
-            function smoothPageTransition(url) {
-                document.body.style.opacity = '0';
-                document.body.style.transform = 'translateY(-20px)';
-                document.body.style.transition = 'all 0.4s ease-in-out';
-                
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 400);
-            }
-            
-            // Add click event listeners for smooth transitions
-            document.getElementById('blogTitle').addEventListener('click', function(e) {
-                e.preventDefault();
-                smoothPageTransition('blog.html');
-            });
-            
-            document.getElementById('projectsTitle').addEventListener('click', function(e) {
-                e.preventDefault();
-                smoothPageTransition('projects.html');
-            });
-        });
-    </script>
+        <section class="section-shell expertise-section">
+            <div class="section-heading">
+                <p class="eyebrow">What I work on</p>
+                <h2>Research depth, engineering discipline.</h2>
+            </div>
+            <div class="expertise-grid">
+                <article class="expertise-card">
+                    <p class="card-index">01</p>
+                    <h3>Recommendation Systems</h3>
+                    <p>Cross-domain transfer, federated learning, personalization, and communication-efficient model updates.</p>
+                </article>
+                <article class="expertise-card">
+                    <p class="card-index">02</p>
+                    <h3>Search & Reranking</h3>
+                    <p>Budget-aware neural reranking, controlled evaluation, uncertainty analysis, and retrieval quality.</p>
+                </article>
+                <article class="expertise-card">
+                    <p class="card-index">03</p>
+                    <h3>Applied AI Engineering</h3>
+                    <p>Production-oriented APIs, agent workflows, cloud infrastructure, evaluation, and CI/CD.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell selected-work">
+            <div class="section-heading heading-row">
+                <div>
+                    <p class="eyebrow">Selected work</p>
+                    <h2>Projects across research and production.</h2>
+                </div>
+                <a class="text-link" href="projects.html">View all projects →</a>
+            </div>
+            <div class="project-preview-grid">
+                <a class="project-preview featured" href="https://github.com/jingning0528/pen-match-api-v2" target="_blank" rel="noreferrer">
+                    <div class="project-meta"><span>Applied AI</span><span>01</span></div>
+                    <h3>PEN Match API V2</h3>
+                    <p>A production-oriented FastAPI and Azure AI platform for student-record matching, retrieval, evaluation, and agent workflows.</p>
+                    <div class="tag-row"><span>FastAPI</span><span>Azure</span><span>LangGraph</span><span>Terraform</span></div>
+                </a>
+                <a class="project-preview" href="https://github.com/jingning0528/adaptive-reranking" target="_blank" rel="noreferrer">
+                    <div class="project-meta"><span>Information Retrieval</span><span>02</span></div>
+                    <h3>Adaptive Reranking</h3>
+                    <p>Controlled experiments for allocating limited cross-encoder budgets while preserving ranking quality.</p>
+                    <div class="tag-row"><span>PyTorch</span><span>BEIR</span><span>Evaluation</span></div>
+                </a>
+                <a class="project-preview" href="https://github.com/jingning0528/mofilora-fedrec" target="_blank" rel="noreferrer">
+                    <div class="project-meta"><span>Federated Learning</span><span>03</span></div>
+                    <h3>MoFiLoRA</h3>
+                    <p>Momentum-enhanced low-rank adaptation for communication-efficient federated recommendation.</p>
+                    <div class="tag-row"><span>LoRA</span><span>FedNCF</span><span>PyTorch</span></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-shell contact-strip">
+            <div>
+                <p class="eyebrow">Let’s connect</p>
+                <h2>Interested in applied AI, recommendation, or reliable ML?</h2>
+            </div>
+            <a class="button button-primary" href="https://github.com/jingning0528" target="_blank" rel="noreferrer">Find me on GitHub ↗</a>
+        </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+        <p>© 2026 Jingning</p>
+        <p>Designed and built with HTML, CSS, and curiosity.</p>
+    </footer>
 </body>
 </html>
