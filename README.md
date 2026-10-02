@@ -2,7 +2,7 @@
 
 Personal portfolio for applied AI, machine learning, recommendation systems, information retrieval, and cloud engineering.
 
-Visit the live site at [jingning.github.io](https://jingning.github.io).
+Visit the live site at [jingning0528.github.io](https://jingning0528.github.io).
 
 ## Features
 

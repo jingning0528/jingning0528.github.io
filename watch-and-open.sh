@@ -47,7 +47,7 @@ case "$1" in
         exit 0
         ;;
     "watch")
-        echo "🚀 Starting file watcher for jingning.github.io"
+        echo "🚀 Starting file watcher for jingning0528.github.io"
         echo "📂 Watching for changes in HTML, CSS, and JS files..."
         echo "💡 Files changed will be detected, but webpage won't auto-open"
         echo "🌐 Use './watch-and-open.sh open-main' to open main website"
@@ -65,7 +65,7 @@ case "$1" in
         done
         ;;
     *)
-        echo "🌐 jingning.github.io - File Watcher & Opener"
+        echo "🌐 jingning0528.github.io - File Watcher & Opener"
         echo ""
         echo "Usage:"
         echo "  ./watch-and-open.sh open-main     # Open main website"
